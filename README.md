@@ -19,7 +19,7 @@ Hệ thống quản lý nhật báo doanh nghiệp toàn diện cho các công t
 
 ### Frontend (Tương lai)
 
--   **Framework**: Next.js 14 + TypeScript
+-   **Framework**: React 18 + Next.js 14 + TypeScript
 -   **UI Library**: Shadcn/ui + Tailwind CSS
 -   **State Management**: Zustand
 -   **Form Handling**: React Hook Form + Zod
@@ -57,10 +57,12 @@ JPReport/
 git clone <repository-url>
 cd JPReport
 
-# Chạy backend
-cd be
+# Khởi động toàn bộ stack (Database + Redis + Backend)
 docker-compose up -d
-./mvnw spring-boot:run
+
+# Hoặc chỉ chạy infrastructure và backend manual
+docker-compose up -d postgres redis
+cd be && ./mvnw spring-boot:run
 ```
 
 ## API Endpoints
