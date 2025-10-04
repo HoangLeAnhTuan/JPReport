@@ -107,10 +107,12 @@ cd be
 cp env-example .env
 # Edit .env file if needed
 
-# 3. Start infrastructure services
-docker-compose up -d
+# 3. Start infrastructure services (từ thư mục gốc)
+cd ..
+docker-compose up -d postgres redis
 
 # 4. Run application (Flyway auto-migration included)
+cd be
 ./mvnw spring-boot:run
 ```
 
@@ -120,9 +122,9 @@ docker-compose up -d
 
 ### **URL Ứng dụng:**
 
--   **Base API**: http://localhost:8080/api/v1
--   **Health Check**: http://localhost:8080/api/v1/actuator/health
--   **Metrics**: http://localhost:8080/api/v1/actuator/metrics
+-   **Base API**: http://localhost:8081/api/v1
+-   **Health Check**: http://localhost:8081/api/v1/actuator/health
+-   **Metrics**: http://localhost:8081/api/v1/actuator/metrics
 
 ### **Định dạng API Response:**
 

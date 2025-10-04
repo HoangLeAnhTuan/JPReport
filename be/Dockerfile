@@ -1,5 +1,5 @@
 # Multi-stage build để tối ưu kích thước image
-FROM maven:3.9.6-openjdk-17-slim AS build
+FROM maven:3.9.6-eclipse-temurin-17-alpine AS build
 
 # Set working directory
 WORKDIR /app
@@ -13,13 +13,13 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Runtime stage
-FROM openjdk:17-jre-slim
+FROM eclipse-temurin:17-jre-alpine
 
-# Install curl cho health check
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+# Install curl và wget cho health check
+RUN apk add --no-cache curl wget
 
 # Create non-root user
-RUN groupadd -r spring && useradd -r -g spring spring
+RUN addgroup -S spring && adduser -S spring -G spring
 
 # Set working directory
 WORKDIR /app

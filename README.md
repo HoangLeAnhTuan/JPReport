@@ -67,9 +67,9 @@ cd be && ./mvnw spring-boot:run
 
 ## API Endpoints
 
--   **Base URL**: http://localhost:8080/api/v1
--   **Health Check**: http://localhost:8080/api/v1/actuator/health
--   **Swagger UI**: http://localhost:8080/swagger-ui.html (Tương lai)
+-   **Base URL**: http://localhost:8081/api/v1
+-   **Health Check**: http://localhost:8081/api/v1/actuator/health
+-   **Swagger UI**: http://localhost:8081/swagger-ui.html (Tương lai)
 
 ## Trạng thái phát triển
 
