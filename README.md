@@ -45,7 +45,7 @@ Hệ thống quản lý nhật báo doanh nghiệp toàn diện cho các công t
 ```
 JPReport/
 ├── be/                 # Backend (Spring Boot)
-├── fe/                 # Frontend (Next.js) - Tương lai
+├── fe/                 # Frontend (React.js) - Tương lai
 ├── docker-compose.yml  # Development environment
 └── README.md          # Tài liệu này
 ```
